@@ -49,6 +49,7 @@ namespace IUP_BMI_Calculator.ViewModel
         {
             var repo = new BMIResultRepository(FileAccessHelper.GetLocalFilePath("BMIResult_5999222008_FlavienGeoffray.db3"));
             repo.AddNewBMIResult(Name,Height,Weight,BMIScore,BMIResult);
+            App.Current.MainPage.DisplayAlert("BMI Result Saved", "The BMI result has been saved to the database.", "OK");
         }
 
         [RelayCommand]

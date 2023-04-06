@@ -6,12 +6,12 @@ public partial class App : Application
 {
 	public BMIResultRepository BMIResultRepo { get; set; }
 
-	public App(BMIResultRepository repo)
+	public App()
 	{
 		InitializeComponent();
 
-		MainPage = new AppShell();
+		BMIResultRepo = new BMIResultRepository(FileAccessHelper.GetLocalFilePath("BMIResult_5999222008_FlavienGeoffray.db3"));
 
-		BMIResultRepo = repo;
-	}
+        MainPage = new AppShell();
+    }
 }
